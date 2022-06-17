@@ -1,0 +1,71 @@
+/* mega menu list */
+.menu-bar {
+    display: block;
+    position: relative;
+    list-style: none;
+    z-index: 15;
+  }
+  
+  /* a top level navigation item in the mega menu */
+  .nav-item {
+    list-style: none;
+    display: inline-block;
+  }
+  
+  /* first descendant link within a top level navigation item */
+  .nav-item > a {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* sub-navigation panel */
+  .sub-nav {
+    position: absolute;
+    display: none;
+    width: 100vw;
+    left: 0;
+  }
+  
+  /* sub-navigation panel open state */
+  .nav-item.open .sub-nav {
+    display: block;
+  }
+  
+  /* list of items within sub-navigation panel */
+  .sub-nav ul {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /* list item within sub-navigation panel */
+  .sub-nav li {
+    display: block;
+    list-style-type: none;
+  }
+  
+  /**
+      Non-essential styles
+  */
+  
+  .app {
+      height: 300px;
+  }
+  
+  /* Hearst mock style */
+  
+  .hearst-menu-bar {
+      
+  }
+  
+  .hearst-menu-item {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+  }
+  
+  .hearst-sub-menu .megbox-container {
+      display: flex;
+  }
