@@ -1,5 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import '@testing-library/jest-dom'
+import { render, screen } from "@testing-library/react";
 
 import AccessibleMegaMenu from "./AccessibleMegaMenu";
 
@@ -265,7 +266,6 @@ const menuData = [
   },
 ];
 
-
 describe("AccessibleMegaMenu", () => {
   test("renders the AccessibleMegaMenu component", () => {
     render(
@@ -277,5 +277,9 @@ describe("AccessibleMegaMenu", () => {
         subMenuGroupClassName="sub-menu-group" // Required for right-left arrow navigation
       />
     );
+
+    const AccessibleMegaMenuComponent = screen.getByTestId("accessible-mega-menu");
+
+    expect(AccessibleMegaMenuComponent).toBeInTheDocument();
   });
 });

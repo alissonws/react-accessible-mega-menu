@@ -16,7 +16,7 @@ const AccessibleMegaMenu = (props) => {
   const megaMenuRef = useRef(null);
 
   return (
-    <nav aria-label="Mega menu" id="accessible-mega-menu" ref={megaMenuRef}>
+    <nav aria-label="Mega menu" id="accessible-mega-menu" data-testid="accessible-mega-menu" ref={megaMenuRef}>
       <ul className={`menu-bar ${menuBarClassName}`} role="menubar">
         {menuData.map((item, index) => {
           return (
