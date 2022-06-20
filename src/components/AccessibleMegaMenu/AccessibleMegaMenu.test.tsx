@@ -1,6 +1,7 @@
 import React from "react";
 import '@testing-library/jest-dom'
 import { render, screen } from "@testing-library/react";
+import userEvent from '@testing-library/user-event';
 
 import AccessibleMegaMenu from "./AccessibleMegaMenu";
 
@@ -281,5 +282,23 @@ describe("AccessibleMegaMenu", () => {
     const AccessibleMegaMenuComponent = screen.getByTestId("accessible-mega-menu");
 
     expect(AccessibleMegaMenuComponent).toBeInTheDocument();
+  });
+
+  test("arrow navigation", () => {
+    render(
+      <AccessibleMegaMenu
+        menuData={menuData}
+        menuBarClassName="hearst-menu-bar"
+        menuItemClassName="hearst-menu-item"
+        subMenuClassName="hearst-sub-menu"
+        subMenuGroupClassName="sub-menu-group" // Required for right-left arrow navigation
+      />
+    );
+
+    const FirstMenuItem = screen.getByTestId("menu-item-0");
+
+    userEvent.tab();
+
+    expect(FirstMenuItem).toHaveFocus();
   });
 });

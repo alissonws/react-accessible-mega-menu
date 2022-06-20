@@ -147,6 +147,7 @@ const MenuItem = (props) => {
   return (
     <li
       ref={menuItemRef}
+      data-testid={`menu-item-${index}`}
       tabIndex={0}
       className={`nav-item ${isOpened ? "open" : ""}`}
       onMouseEnter={(e) => {
